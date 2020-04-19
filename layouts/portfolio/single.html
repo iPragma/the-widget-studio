@@ -1,0 +1,75 @@
+{{ define "main" }}
+
+<section class="site-about-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="site-about-wrapper">
+          <div class="site-about-company">
+            <h1>
+              {{ .Params.heading }}
+            </h1>
+          </div>
+          <div class="site-about-description">
+            <p>
+              {{ .Description }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="site-project-single-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <div class="site-project-single">
+
+          {{ if .Params.iframe }}
+          <!-- view-source:https://vuejs.org/v2/examples/ -->
+          <div class="iframe-container">
+            <iframe seamless src="{{ .Params.iframe }}" loading="lazy"></iframe>
+            <!-- <iframe src="https://codesandbox.io/embed/github/vuejs/vuejs.org/tree/master/src/v2/examples/vue-20-markdown-editor?codemirror=1&hidedevtools=1&hidenavigation=1&theme=light" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="vue-20-template-compilation" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe> -->
+          </div>
+          {{ end }}
+          
+          {{ if .Title }}
+          <h1>
+            {{ .Title }}
+          </h1>
+          {{ end }}
+          {{ if .Content }}
+          <div class="site-project-single-description">
+            {{ .Content }}
+          </div>
+          {{ end }}
+          <div class="site-project-single-image">
+            {{ range .Params.project_images }}
+            <img src="{{ . | absURL }}" alt="project image">
+            {{ end }}
+          </div>
+
+          {{ if .NextInSection }}
+          <div class="site-project-single-action">
+            <a href="{{.NextInSection.Permalink}}">
+              <span class="link-area">
+                <span data-text="Next Project">
+                  Next Project
+                </span>
+              </span>
+              <img src="{{ "images/to-top.svg" | absURL }}" alt="next project">
+            </a>
+          </div>
+          {{ end }}
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- {{ partial "call-to-action.html" . }} -->
+
+{{ end }}

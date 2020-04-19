@@ -1,0 +1,44 @@
+.iframe-container {
+  overflow: hidden;
+  /* padding-top: 110%; */
+  padding-top: 97.5vh;
+  position: relative;
+}
+.iframe-container iframe {
+  border: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+// _project
+.site-project-single-section {
+  padding: 100px 0 100px
+}
+// _hero
+.site-hero{
+  &-content{
+    h1{
+      color: white;
+    }
+  }
+  .site-hero-scroll.scroll-to img {
+    width: 44px;
+  }
+}
+// _navigation
+.site-navigation{
+  .navbar-brand img {
+    max-width: 100px;
+  }
+}
+// _footer
+.site-footer{
+  .site-footer-widget-top img {
+    width: 44px;
+  }
+  .site-footer-logo img {
+    max-width: 100px;
+  }
+}
