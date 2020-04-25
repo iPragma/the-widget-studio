@@ -7,12 +7,12 @@
         <div class="site-about-wrapper">
           <div class="site-about-company">
             <h1>
-              {{ .Params.heading }}
+              {{ .Params.heading | safeHTML }}
             </h1>
           </div>
           <div class="site-about-description">
             <p>
-              {{ .Description }}
+              {{ .Description | safeHTML }}
             </p>
           </div>
         </div>
