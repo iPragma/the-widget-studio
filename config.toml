@@ -1,4 +1,4 @@
-baseURL       = "/"
+baseURL       = "https://www.novawebapp.com/"
 languageCode  = "en-us"
 title         = "Nova Web App | Creative Design Agency"
 theme         = "roxo"
