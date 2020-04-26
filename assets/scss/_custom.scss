@@ -12,9 +12,35 @@
   top: 0;
   width: 100%;
 }
+// _about
+.site-about{
+  &-header{
+    padding-top: 80px;
+    background-color: $gray;
+    @include mobile{
+      padding-top: 0;
+      padding-bottom: 30px;
+      text-align: center;
+    }
+  }
+}
 // _project
-.site-project-single-section {
-  padding: 100px 0 100px
+.site-project {
+  &-header{
+    padding: 170px 0 100px;
+    background: $gray;
+    @include tablet{
+      padding: 80px 0 80px;
+    }
+  }
+  &-single{
+    &-section{
+      padding: 100px 0 100px;
+      @include tablet{
+        padding: 100px 0;
+      }
+    }
+  }
 }
 // _hero
 .site-hero{
@@ -25,17 +51,6 @@
   }
   .site-hero-scroll.scroll-to img {
     width: 44px;
-  }
-}
-// _navigation
-.site-navigation{
-  .navbar-brand img {
-    max-width: 100px;
-  }
-  li.nav-item:last-child {
-    @include mobile{
-    margin-left: 0px;
-  }
   }
 }
 // _footer
@@ -63,4 +78,34 @@
   padding: 0;
   position: absolute !important;
   width: 1px;
+}
+// _navigation
+.site-navigation{
+  padding: 20px 0;
+  background: $white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  @include desktop{
+    background: $white;
+    position: static;
+    margin: 0;
+    border-radius: 0;
+    top: 0;
+    width: 100%;
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.09);
+  }
+  @include mobile{
+    padding: 15px;
+  }
+  .navbar-brand img {
+    max-width: 100px;
+  }
+  li.nav-item:last-child {
+    @include mobile{
+      margin-left: 0px;
+    }
+  }
 }
